@@ -74,7 +74,9 @@
                             </h4>
                             <div class="customizer-row">
                                 <label>Base font size</label>
-                                <span class="customizer-value">{{ values.sizeNormal.toFixed(2) }}rem</span>
+                                <span class="customizer-value">
+                                    {{ values.sizeNormal.toFixed(2) }}rem
+                                </span>
                             </div>
                             <input
                                 v-model.number="values.sizeNormal"
@@ -146,8 +148,12 @@
                                     class="customizer-var-entry"
                                 >
                                     <div class="customizer-var-meta">
-                                        <code class="customizer-var-name">{{ stripBulmaPrefix(extractVarName(entry.css)) }}</code>
-                                        <span class="customizer-var-desc">{{ entry.description }}</span>
+                                        <code class="customizer-var-name">
+                                            {{ stripBulmaPrefix(extractVarName(entry.css)) }}
+                                        </code>
+                                        <span class="customizer-var-desc">
+                                            {{ entry.description }}
+                                        </span>
                                     </div>
                                     <input
                                         type="text"
