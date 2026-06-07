@@ -1,6 +1,7 @@
 <template>
     <div class="customizer-wrapper">
         <button
+            v-show="!footerVisible"
             class="customizer-toggle"
             :class="{ 'is-active': isOpen }"
             title="Customize theme"
@@ -339,6 +340,8 @@ export default defineComponent({
         return {
             isOpen: false,
             copied: false,
+            footerVisible: false,
+            footerObserver: null as IntersectionObserver | null,
             colorLabels: COLOR_LABELS,
             values: { ...DEFAULTS } as CustomizerValues,
             selectedComponent: '',
@@ -545,6 +548,15 @@ export default defineComponent({
         }
     },
     mounted() {
+        const footer = document.querySelector('footer.footer')
+        if (footer) {
+            this.footerObserver = new IntersectionObserver(([entry]) => {
+                this.footerVisible = entry.isIntersecting
+                if (entry.isIntersecting) this.isOpen = false
+            })
+            this.footerObserver.observe(footer)
+        }
+
         const saved = localStorage.getItem(STORAGE_KEY)
         if (saved) {
             try {
@@ -566,6 +578,7 @@ export default defineComponent({
         this.syncComponentFromRoute(this.$route.path)
     },
     beforeUnmount() {
+        this.footerObserver?.disconnect()
         const el = document.getElementById('buefy-customizer-styles')
         if (el) el.remove()
     }
