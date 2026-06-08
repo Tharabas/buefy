@@ -6,14 +6,13 @@
     >
         <div class="container">
             <div class="footer-grid">
-
                 <!-- Brand column -->
                 <div class="footer-brand">
                     <img
                         src="../assets/buefy.png"
                         alt="Buefy logo"
                         class="footer-logo"
-                    />
+                    >
                     <p class="footer-tagline mt-2">
                         Lightweight UI components for Vue.js based on Bulma.
                     </p>
@@ -33,7 +32,8 @@
                     <div class="footer-install mt-3">
                         <pre class="footer-npm"><code>npm install buefy</code></pre>
                         <p class="footer-compat is-size-7 mt-2">
-                            <span class="has-text-warning">⚠</span> Vue 2 — EOL, no longer receiving updates<br>
+                            <span class="has-text-warning">⚠</span>
+                            Vue 2 — EOL, no longer receiving updates<br>
                             <span class="has-text-success">✓</span> Vue 3 — fully supported
                         </p>
                     </div>
@@ -223,7 +223,6 @@
                         </li>
                     </ul>
                 </nav>
-
             </div>
 
             <!-- Social & Copyright -->

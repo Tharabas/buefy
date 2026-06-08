@@ -107,12 +107,12 @@ export function createDocsRouter(vueApp: App) {
                     // Expo
                     route('expo', () => import('@/pages/Expo.vue')),
                     // Standalone pages
-                    route('changelog',  () => import('@/pages/Changelog.vue')),
-                    route('privacy',    () => import('@/pages/Privacy.vue')),
+                    route('changelog', () => import('@/pages/Changelog.vue')),
+                    route('privacy', () => import('@/pages/Privacy.vue')),
                     route('enterprise', () => import('@/pages/Enterprise.vue')),
                     route('contribute', () => import('@/pages/Contribute.vue')),
-                    route('sponsors',   () => import('@/pages/Sponsors.vue')),
-                    route('support',    () => import('@/pages/Support.vue'))
+                    route('sponsors', () => import('@/pages/Sponsors.vue')),
+                    route('support', () => import('@/pages/Support.vue'))
                 ]
             },
             // Global redirect
