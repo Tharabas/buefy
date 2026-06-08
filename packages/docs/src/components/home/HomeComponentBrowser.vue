@@ -1,11 +1,21 @@
 <template>
     <section class="component-browser-section">
         <div class="container">
-            <h2 class="section-title has-text-centered">40+ Components</h2>
-            <p class="section-sub has-text-centered">Everything you need to build modern Vue 3 apps</p>
+            <h2 class="section-title has-text-centered">
+                40+ Components
+            </h2>
+            <p class="section-sub has-text-centered">
+                Everything you need to build modern Vue 3 apps
+            </p>
             <div class="component-browser">
-                <div v-for="category in categories" :key="category.label" class="category-row">
-                    <div class="category-label">{{ category.label }}</div>
+                <div
+                    v-for="category in categories"
+                    :key="category.label"
+                    class="category-row"
+                >
+                    <div class="category-label">
+                        {{ category.label }}
+                    </div>
                     <div class="chip-row">
                         <router-link
                             v-for="item in category.items"
@@ -30,8 +40,8 @@ export default defineComponent({
     name: 'HomeComponentBrowser',
     data() {
         return {
-            categories,
+            categories
         }
-    },
+    }
 })
 </script>

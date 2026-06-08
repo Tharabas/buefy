@@ -36,10 +36,18 @@
             <div class="hero-gh-buttons home-hero">
                 <iframe
                     src="https://ghbtns.com/github-btn.html?user=buefy&repo=buefy&type=star&count=true&size=large"
-                    frameborder="0" scrolling="0" width="160px" height="30px" />
+                    frameborder="0"
+                    scrolling="0"
+                    width="160px"
+                    height="30px"
+                />
                 <iframe
                     src="https://ghbtns.com/github-btn.html?user=buefy&repo=buefy&type=fork&count=false&size=large"
-                    frameborder="0" scrolling="0" width="80px" height="30px" />
+                    frameborder="0"
+                    scrolling="0"
+                    width="80px"
+                    height="30px"
+                />
             </div>
 
             <small class="home-hero">v{{ version }}</small>
@@ -55,12 +63,20 @@ export default defineComponent({
     props: {
         version: {
             type: String,
-            required: true,
-        },
+            required: true
+        }
     },
     data() {
         return {
-            copied: false,
+            copied: false
+        }
+    },
+    methods: {
+        copyInstall() {
+            navigator.clipboard.writeText('npm install buefy').then(() => {
+                this.copied = true
+                setTimeout(() => { this.copied = false }, 2000)
+            })
         }
     },
     mounted() {
@@ -72,15 +88,7 @@ export default defineComponent({
                 }, index * 100)
             })
         })
-    },
-    methods: {
-        copyInstall() {
-            navigator.clipboard.writeText('npm install buefy').then(() => {
-                this.copied = true
-                setTimeout(() => { this.copied = false }, 2000)
-            })
-        },
-    },
+    }
 })
 </script>
 

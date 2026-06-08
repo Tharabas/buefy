@@ -61,7 +61,11 @@
         </template>
 
         <template #end>
-            <b-navbar-item tag="router-link" to="/" exact>
+            <b-navbar-item
+                tag="router-link"
+                to="/"
+                exact
+            >
                 Home
             </b-navbar-item>
 

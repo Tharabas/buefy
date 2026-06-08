@@ -2,7 +2,11 @@
     <section class="features-section">
         <div class="container">
             <div class="features-grid">
-                <div v-for="feature in features" :key="feature.title" class="feature-card features">
+                <div
+                    v-for="feature in features"
+                    :key="feature.title"
+                    class="feature-card features"
+                >
                     <div class="card-icon">
                         <b-icon :icon="feature.icon" />
                     </div>
@@ -24,7 +28,7 @@ export default defineComponent({
     components: { BIcon },
     data() {
         return {
-            features,
+            features
         }
     },
     mounted() {
@@ -36,7 +40,7 @@ export default defineComponent({
                 }, 500 + index * 200)
             })
         })
-    },
+    }
 })
 </script>
 

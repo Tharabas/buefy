@@ -1,8 +1,12 @@
 <template>
     <section class="quick-install-section">
         <div class="container has-text-centered">
-            <h2 class="section-title">Get started in seconds</h2>
-            <p class="section-sub">Install via your preferred package manager</p>
+            <h2 class="section-title">
+                Get started in seconds
+            </h2>
+            <p class="section-sub">
+                Install via your preferred package manager
+            </p>
             <div class="install-tabs">
                 <button
                     v-for="tab in tabs"
@@ -35,13 +39,13 @@ export default defineComponent({
         return {
             tabs,
             activeTab: 'npm',
-            copied: false,
+            copied: false
         }
     },
     computed: {
         currentCmd(): string {
             return this.tabs.find((t) => t.id === this.activeTab)?.cmd ?? ''
-        },
+        }
     },
     methods: {
         copyCmd() {
@@ -49,7 +53,7 @@ export default defineComponent({
                 this.copied = true
                 setTimeout(() => { this.copied = false }, 2000)
             })
-        },
-    },
+        }
+    }
 })
 </script>

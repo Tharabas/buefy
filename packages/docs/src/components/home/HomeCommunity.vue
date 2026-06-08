@@ -2,14 +2,32 @@
     <section class="home-community-section">
         <div class="container">
             <div v-if="sponsors && sponsors.length" class="community-sponsors">
-                <p class="community-label">Sponsors</p>
+                <p class="community-label">
+                    Sponsors
+                </p>
                 <div class="community-grid">
-                    <div v-for="item in sponsors" :key="item.title" class="community-item">
-                        <a :href="item.url" target="_blank" rel="noopener noreferrer">
-                            <img class="image-has-shadow" :src="getSponsorImg(item.img)" :alt="item.title" />
+                    <div
+                        v-for="item in sponsors"
+                        :key="item.title"
+                        class="community-item"
+                    >
+                        <a
+                            :href="item.url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                class="image-has-shadow"
+                                :src="getSponsorImg(item.img)"
+                                :alt="item.title"
+                            >
                         </a>
-                        <a class="community-item-title" :href="item.url" target="_blank"
-                            rel="noopener noreferrer">{{ item.title }}</a>
+                        <a
+                            class="community-item-title"
+                            :href="item.url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >{{ item.title }}</a>
                     </div>
                 </div>
             </div>
@@ -19,15 +37,33 @@
                     Websites and apps
                     <a class="community-link" @click="tweet">#MadeWithBuefy</a>
                     from the
-                    <router-link to="/expo" class="community-link">Expo page</router-link>
+                    <router-link to="/expo" class="community-link">
+                        Expo page
+                    </router-link>
                 </p>
                 <div class="community-grid">
-                    <div v-for="item in expo" :key="item.title" class="community-item">
-                        <a :href="item.url" target="_blank" rel="noopener noreferrer">
-                            <img class="image-has-shadow" :src="getExpoImg(item.img)" :alt="item.title" />
+                    <div
+                        v-for="item in expo"
+                        :key="item.title"
+                        class="community-item"
+                    >
+                        <a
+                            :href="item.url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                class="image-has-shadow"
+                                :src="getExpoImg(item.img)"
+                                :alt="item.title"
+                            >
                         </a>
-                        <a class="community-item-title" :href="item.url" target="_blank"
-                            rel="noopener noreferrer">{{ item.title }}</a>
+                        <a
+                            class="community-item-title"
+                            :href="item.url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >{{ item.title }}</a>
                     </div>
                 </div>
             </div>
@@ -45,7 +81,7 @@ export default defineComponent({
     data() {
         return {
             expo: expoData.filter((item) => item.featured),
-            sponsors: sponsorsData,
+            sponsors: sponsorsData
         }
     },
     methods: {
@@ -65,7 +101,7 @@ export default defineComponent({
         },
         getSponsorImg(img: string) {
             return new URL(`/src/assets/sponsors/${img}`, import.meta.url).href
-        },
-    },
+        }
+    }
 })
 </script>

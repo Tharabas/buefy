@@ -14,8 +14,8 @@ const categories: ComponentCategory[] = [
         items: [
             { name: 'Dialog', route: '/documentation/dialog' },
             { name: 'Dropdown', route: '/documentation/dropdown' },
-            { name: 'Modal', route: '/documentation/modal' },
-        ],
+            { name: 'Modal', route: '/documentation/modal' }
+        ]
     },
     {
         label: 'Data Display',
@@ -33,8 +33,8 @@ const categories: ComponentCategory[] = [
             { name: 'Table', route: '/documentation/table' },
             { name: 'Tag', route: '/documentation/tag' },
             { name: 'Toast', route: '/documentation/toast' },
-            { name: 'Tooltip', route: '/documentation/tooltip' },
-        ],
+            { name: 'Tooltip', route: '/documentation/tooltip' }
+        ]
     },
     {
         label: 'Form Controls',
@@ -55,8 +55,8 @@ const categories: ComponentCategory[] = [
             { name: 'Switch', route: '/documentation/switch' },
             { name: 'Taginput', route: '/documentation/taginput' },
             { name: 'Timepicker', route: '/documentation/timepicker' },
-            { name: 'Upload', route: '/documentation/upload' },
-        ],
+            { name: 'Upload', route: '/documentation/upload' }
+        ]
     },
     {
         label: 'Navigation',
@@ -67,9 +67,9 @@ const categories: ComponentCategory[] = [
             { name: 'Pagination', route: '/documentation/pagination' },
             { name: 'Sidebar', route: '/documentation/sidebar' },
             { name: 'Steps', route: '/documentation/steps' },
-            { name: 'Tabs', route: '/documentation/tabs' },
-        ],
-    },
+            { name: 'Tabs', route: '/documentation/tabs' }
+        ]
+    }
 ]
 
 export default categories

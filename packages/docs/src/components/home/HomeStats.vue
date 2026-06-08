@@ -18,8 +18,8 @@ export default defineComponent({
     name: 'HomeStats',
     data() {
         return {
-            stats,
+            stats
         }
-    },
+    }
 })
 </script>
