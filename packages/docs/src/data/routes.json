@@ -670,5 +670,71 @@
             "expo"
         ],
         "hideSidebar": true
+    },
+    "changelog": {
+        "title": "Changelog",
+        "subtitle": "Release history, version notes, and upgrade guides",
+        "path": "/changelog",
+        "githubPath": "pages/Changelog.vue",
+        "breadcrumb": [
+            "/",
+            "changelog"
+        ],
+        "hideSidebar": true
+    },
+    "privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "How buefy.org handles your data",
+        "path": "/privacy",
+        "githubPath": "pages/Privacy.vue",
+        "breadcrumb": [
+            "/",
+            "privacy"
+        ],
+        "hideSidebar": true
+    },
+    "enterprise": {
+        "title": "Enterprise",
+        "subtitle": "Enterprise support, licensing, and consulting for Buefy",
+        "path": "/enterprise",
+        "githubPath": "pages/Enterprise.vue",
+        "breadcrumb": [
+            "/",
+            "enterprise"
+        ],
+        "hideSidebar": true
+    },
+    "contribute": {
+        "title": "Contribute",
+        "subtitle": "Help shape Buefy — every contribution matters",
+        "path": "/contribute",
+        "githubPath": "pages/Contribute.vue",
+        "breadcrumb": [
+            "/",
+            "contribute"
+        ],
+        "hideSidebar": true
+    },
+    "sponsors": {
+        "title": "Sponsors",
+        "subtitle": "Organizations and individuals supporting Buefy",
+        "path": "/sponsors",
+        "githubPath": "pages/Sponsors.vue",
+        "breadcrumb": [
+            "/",
+            "sponsors"
+        ],
+        "hideSidebar": true
+    },
+    "support": {
+        "title": "Get Support",
+        "subtitle": "Help resources, community channels, and support options",
+        "path": "/support",
+        "githubPath": "pages/Support.vue",
+        "breadcrumb": [
+            "/",
+            "support"
+        ],
+        "hideSidebar": true
     }
 }
