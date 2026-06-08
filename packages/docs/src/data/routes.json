@@ -58,6 +58,19 @@
         ],
         "isNew": true
     },
+    "documentation/theme-switching": {
+        "title": "Theme Switching",
+        "subtitle": "Add light/dark mode to your app using Buefy components and a shared composable.",
+        "path": "/documentation/theme-switching",
+        "githubPath": "pages/installation/ThemeSwitching.vue",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/theme-switching"
+        ],
+        "isNew": true
+    },
     "documentation/typography": {
         "title": "Typography",
         "subtitle": "Type scale, font helpers, custom fonts, and fluid sizing for Vue 3 with Bulma",

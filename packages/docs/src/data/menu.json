@@ -10,7 +10,8 @@
                     "category": "Customization",
                     "pages": [
                         "documentation/sass",
-                        "documentation/css-variables"
+                        "documentation/css-variables",
+                        "documentation/theme-switching"
                     ]
                 },
                 "documentation/constructor-options",

@@ -132,6 +132,10 @@ export default defineComponent({
     methods: {
         closeMenu() {
             this.isMenuOpen = false
+        },
+        onScroll() {
+            const navEl = (this.$refs.navbar as InstanceType<typeof BNavbar>).$el as HTMLElement
+            navEl.classList.toggle('is-scrolled', window.scrollY > 60)
         }
     },
     mounted() {
@@ -141,16 +145,13 @@ export default defineComponent({
         // since BNavbar uses a render function (class fallthrough isn't guaranteed)
         const navEl = (this.$refs.navbar as InstanceType<typeof BNavbar>).$el as HTMLElement
         navEl.classList.add('docs-navbar')
-        this._onScroll = () => {
-            navEl.classList.toggle('is-scrolled', window.scrollY > 60)
-        }
-        window.addEventListener('scroll', this._onScroll, { passive: true })
+        window.addEventListener('scroll', this.onScroll, { passive: true })
 
         useTheme().setTheme(useTheme().getTheme())
     },
     beforeUnmount() {
         this.$eventHub.off('navigate', this.closeMenu)
-        window.removeEventListener('scroll', this._onScroll)
+        window.removeEventListener('scroll', this.onScroll)
     }
 })
 </script>

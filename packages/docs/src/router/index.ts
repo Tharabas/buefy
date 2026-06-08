@@ -54,6 +54,7 @@ export function createDocsRouter(vueApp: App) {
                     route('documentation/start', () => import('@/pages/installation/Start.vue')),
                     route('documentation/sass', () => import('@/pages/installation/Sass.vue')),
                     route('documentation/css-variables', () => import('@/pages/installation/CssVariables.vue')),
+                    route('documentation/theme-switching', () => import('@/pages/installation/ThemeSwitching.vue')),
                     route('documentation/typography', () => import('@/pages/installation/Typography.vue')),
                     route('documentation/constructor-options', () => import('@/pages/installation/ConstructorOptions.vue')),
                     route('documentation/layout', () => import('@/pages/Layout.vue')),
