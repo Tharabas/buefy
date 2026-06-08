@@ -58,6 +58,19 @@
         ],
         "isNew": true
     },
+    "documentation/typography": {
+        "title": "Typography",
+        "subtitle": "Type scale, font helpers, custom fonts, and fluid sizing for Vue 3 with Bulma",
+        "path": "/documentation/typography",
+        "githubPath": "pages/installation/Typography.vue",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/typography"
+        ],
+        "isNew": true
+    },
     "documentation/constructor-options": {
         "title": "Constructor options",
         "subtitle": "These are global default options, which are set on Buefy initialization",

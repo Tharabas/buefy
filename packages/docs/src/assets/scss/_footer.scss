@@ -1,7 +1,7 @@
 @use "bulma/sass/utilities/css-variables" as cv;
 
 .footer {
-    --buefy-brand: #7957D5;
+    --buefy-brand: var(--color-brand);
     position: relative;
 
     // Legacy class kept for backwards compatibility
@@ -61,7 +61,7 @@
     }
 
     .footer-npm {
-        background: #1a1a1a;
+        background: var(--color-bg-invert);
         color: #e8e8e8;
         border-radius: 4px;
         padding: 0.5em 0.75em;

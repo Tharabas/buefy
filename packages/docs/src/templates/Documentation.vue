@@ -1,9 +1,6 @@
 <template>
     <main>
-        <TheNavbar
-            :light="isLightTheme"
-            @theme-changed="handleThemeChange"
-        />
+        <TheNavbar />
 
         <section class="documentation">
             <div v-if="!meta.hideSidebar" class="sidebar-bg" />
@@ -44,8 +41,6 @@ import TheCustomizer from '@/components/TheCustomizer.vue'
 import menuData from '@/data/menu'
 import type { PageTree } from '@/data/menu'
 import type { Route } from '@/data/routes'
-import { useTheme } from '@/composables/useTheme'
-
 export default defineComponent({
     // eslint-disable-next-line vue/multi-word-component-names
     name: 'Documentation',
@@ -61,8 +56,7 @@ export default defineComponent({
     data() {
         return {
             menu: [] as PageTree[],
-            meta: {} as Partial<Route>,
-            isLightTheme: useTheme().isLight
+            meta: {} as Partial<Route>
         }
     },
     methods: {
@@ -72,9 +66,6 @@ export default defineComponent({
         },
         scrollTo(hash: string) {
             location.href = hash
-        },
-        handleThemeChange(isLight: boolean) {
-            useTheme().setTheme(isLight ? 'light' : 'dark')
         }
     },
     mounted() {
@@ -83,9 +74,6 @@ export default defineComponent({
         if (this.$route.hash) {
             this.$nextTick(() => this.scrollTo(this.$route.hash))
         }
-
-        const { getTheme, setTheme } = useTheme()
-        setTheme(getTheme())
     },
 
     beforeUnmount() {

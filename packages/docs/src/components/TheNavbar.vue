@@ -1,7 +1,7 @@
 <template>
     <nav
         class="navbar docs-navbar is-spaced has-shadow"
-        :class="{ 'is-primary is-transparent': light }"
+        :class="{ 'is-primary is-transparent': isLight, 'is-scrolled': isScrolled }"
     >
         <div class="container">
             <div class="navbar-brand">
@@ -12,7 +12,7 @@
                     active-class=""
                 >
                     <img
-                        v-if="light"
+                        v-if="isLight"
                         src="../assets/buefy-light.png"
                         alt="Buefy"
                     >
@@ -119,15 +119,16 @@
                     </div>
 
                     <div class="navbar-item">
-                        <b-button
-                            :icon-left="light ? 'white-balance-sunny' : 'moon-waning-crescent'"
-                            class="theme-toggle"
-                            size="is-small"
-                            rounded
-                            :title="light ? 'Switch to dark theme' : 'Switch to light theme'"
-                            :aria-label="light ? 'Switch to dark theme' : 'Switch to light theme'"
-                            @click="toggleTheme"
-                        />
+                        <router-link
+                            to="/documentation/start"
+                            class="navbar-cta"
+                        >
+                            Get Started
+                        </router-link>
+                    </div>
+
+                    <div class="navbar-item">
+                        <ThemeToggle />
                     </div>
                 </div>
             </div>
@@ -138,23 +139,20 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { BButton, BIcon } from 'buefy'
+import { BIcon } from 'buefy'
+import ThemeToggle from '@/components/ThemeToggle.vue'
 
 import buefyPackage from '../../../../package.json'
 import bulmaPackage from 'bulma/package.json'
+import { useTheme } from '@/composables/useTheme'
 
 export default defineComponent({
-    components: { BButton, BIcon },
-    emits: ['theme-changed'],
-    props: {
-        light: {
-            type: Boolean,
-            default: true
-        }
-    },
+    components: { BIcon, ThemeToggle },
     data() {
         return {
             isMenuActive: false,
+            isScrolled: false,
+            isLight: useTheme().isLight,
             version: buefyPackage.version,
             bulmaVersion: bulmaPackage.version
         }
@@ -162,43 +160,19 @@ export default defineComponent({
     methods: {
         closeMenu() {
             this.isMenuActive = false
-        },
-        toggleTheme() {
-            this.$emit('theme-changed', !this.light)
         }
     },
     mounted() {
         this.$eventHub.on('navigate', this.closeMenu)
+        this._onScroll = () => { this.isScrolled = window.scrollY > 60 }
+        window.addEventListener('scroll', this._onScroll, { passive: true })
+        useTheme().setTheme(useTheme().getTheme())
     },
 
     beforeUnmount() {
         this.$eventHub.off('navigate', this.closeMenu)
-        // Clean up any scroll-lock class that may have been left by a previous
-        // version of this component or by a BDropdown mobile-modal interaction.
+        window.removeEventListener('scroll', this._onScroll)
         document.documentElement.classList.remove('is-clipped-touch')
     }
 })
 </script>
-
-<style scoped>
-:deep(.theme-toggle.button) {
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: none;
-    color: inherit;
-    transition: background-color 0.15s ease;
-}
-
-:deep(.theme-toggle.button:hover),
-:deep(.theme-toggle.button:focus-visible) {
-    background-color: rgba(127, 127, 127, 0.15);
-    border-color: transparent;
-    color: inherit;
-}
-
-:deep(.theme-toggle.button:active) {
-    background-color: rgba(127, 127, 127, 0.25);
-    border-color: transparent;
-    color: inherit;
-}
-</style>

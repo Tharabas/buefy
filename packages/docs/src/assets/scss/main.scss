@@ -1,3 +1,6 @@
+// Local font faces — must come first so the fonts are declared before use
+@use "_fonts";
+
 // Docs variables - MUST come before Buefy to configure Bulma
 @forward "_variables";
 

@@ -14,8 +14,7 @@ const isLight = ref(getTheme() === 'light')
 function setTheme(theme: Theme): void {
     isLight.value = theme === 'light'
     localStorage.setItem('theme', theme)
-    document.documentElement.classList.toggle('theme-dark', theme === 'dark')
-    document.documentElement.classList.toggle('theme-light', theme === 'light')
+    document.documentElement.setAttribute('data-theme', theme)
 }
 
 function toggleTheme(): void {

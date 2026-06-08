@@ -13,7 +13,8 @@
                         "documentation/css-variables"
                     ]
                 },
-                "documentation/constructor-options"
+                "documentation/constructor-options",
+                "documentation/typography"
             ]
         },
         {
