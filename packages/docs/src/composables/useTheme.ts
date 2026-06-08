@@ -14,7 +14,11 @@ const isLight = ref(getTheme() === 'light')
 function setTheme(theme: Theme): void {
     isLight.value = theme === 'light'
     localStorage.setItem('theme', theme)
+    document.documentElement.classList.add('no-transition')
     document.documentElement.setAttribute('data-theme', theme)
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+        document.documentElement.classList.remove('no-transition')
+    }))
 }
 
 function toggleTheme(): void {

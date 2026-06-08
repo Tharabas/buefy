@@ -113,6 +113,12 @@
   }
 }
 
+// Theme-switch transition suppressor
+html.no-transition *, html.no-transition *::before, html.no-transition *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
 // Reduced motion guard
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
