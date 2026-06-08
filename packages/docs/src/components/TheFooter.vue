@@ -143,7 +143,7 @@
                         </li>
                         <li>
                             <a
-                                href="https://github.com/buefy/buefy/issues/new/choose"
+                                href="https://github.com/buefy/buefy/issues/new?template=BUG_REPORT.md"
                                 class="footer-link"
                                 target="_blank"
                                 rel="noopener noreferrer"

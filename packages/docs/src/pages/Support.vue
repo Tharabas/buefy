@@ -44,7 +44,7 @@
         <p>
             Found a bug? Please
             <a
-                href="https://github.com/buefy/buefy/issues/new/choose"
+                href="https://github.com/buefy/buefy/issues/new?template=BUG_REPORT.md"
                 target="_blank"
                 rel="noopener noreferrer"
             >
