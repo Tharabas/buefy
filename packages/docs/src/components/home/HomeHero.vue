@@ -13,7 +13,7 @@
 
             <p class="hero-sub home-hero">
                 40+ accessible, responsive components based on Bulma.
-                Drop into any Vue 3 project in minutes.
+                Drop into any Buefy Vue 3 project in minutes.
             </p>
 
             <div class="hero-ctas home-hero">
@@ -34,20 +34,10 @@
             </div>
 
             <div class="hero-gh-buttons home-hero">
-                <iframe
-                    src="https://ghbtns.com/github-btn.html?user=buefy&repo=buefy&type=star&count=true&size=large"
-                    frameborder="0"
-                    scrolling="0"
-                    width="160px"
-                    height="30px"
-                />
-                <iframe
-                    src="https://ghbtns.com/github-btn.html?user=buefy&repo=buefy&type=fork&count=false&size=large"
-                    frameborder="0"
-                    scrolling="0"
-                    width="80px"
-                    height="30px"
-                />
+                <iframe src="https://ghbtns.com/github-btn.html?user=buefy&repo=buefy&type=star&count=true&size=large"
+                    frameborder="0" scrolling="0" width="160px" height="30px" />
+                <iframe src="https://ghbtns.com/github-btn.html?user=buefy&repo=buefy&type=fork&count=false&size=large"
+                    frameborder="0" scrolling="0" width="80px" height="30px" />
             </div>
 
             <small class="home-hero">v{{ version }}</small>
