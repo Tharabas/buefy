@@ -232,7 +232,7 @@
                 <div class="level-left has-text-centered-mobile">
                     <div class="level-item">
                         <p>
-                            Buefy &copy; 2017&ndash;2025
+                            Buefy &copy; 2017&ndash;{{ currentYear }}
                             <a
                                 href="http://opensource.org/licenses/mit-license.php"
                                 class="has-text-primary"
@@ -303,4 +303,5 @@ import { BIcon } from 'buefy'
 import Package from '../../../../package.json'
 
 const version = Package.version
+const currentYear = new Date().getFullYear()
 </script>

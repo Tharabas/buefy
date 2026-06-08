@@ -6,7 +6,7 @@
             It must be reviewed and completed by a qualified person before the site goes live.
         </b-message>
 
-        <p><em>Last updated: — (pending legal review)</em></p>
+        <p><em>Last updated: June 8, 2026 (pending legal review)</em></p>
 
         <h2>Overview</h2>
         <p>
