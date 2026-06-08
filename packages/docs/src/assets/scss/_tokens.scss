@@ -1,0 +1,73 @@
+:root {
+  // --- Brand ---
+  --buefy-purple:        #7957D5;
+  --buefy-purple-light:  #9B7AE8;
+  --buefy-purple-dark:   #5C3DC7;
+  --buefy-purple-glow:   rgba(121, 87, 213, 0.15);
+
+  // --- Surfaces ---
+  --surface-base:        #FFFFFF;
+  --surface-raised:      #F7F7FB;
+  --surface-overlay:     #EFECFB;
+  --surface-invert:      #1A1523;
+  --surface-invert-card: #231D30;
+
+  // --- Text ---
+  --text-primary:        #1A1523;
+  --text-secondary:      #6B6880;
+  --text-tertiary:       #9D9AAD;
+  --text-on-dark:        #F0EDFF;
+  --text-on-dark-muted:  #9D9AAD;
+
+  // --- Borders ---
+  --border-subtle:       rgba(121, 87, 213, 0.12);
+  --border-default:      rgba(121, 87, 213, 0.2);
+  --border-strong:       rgba(121, 87, 213, 0.4);
+
+  // --- Gradients ---
+  --gradient-hero:       linear-gradient(135deg, #1A1523 0%, #2D2240 50%, #1A1523 100%);
+  --gradient-brand:      linear-gradient(135deg, #7957D5 0%, #9B7AE8 100%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(121,87,213,0.08) 0%, rgba(155,122,232,0.04) 100%);
+
+  // --- Shadows ---
+  --shadow-sm:    0 1px 3px rgba(26, 21, 35, 0.08), 0 1px 2px rgba(26, 21, 35, 0.04);
+  --shadow-md:    0 4px 12px rgba(26, 21, 35, 0.1), 0 2px 4px rgba(26, 21, 35, 0.06);
+  --shadow-lg:    0 12px 32px rgba(26, 21, 35, 0.12), 0 4px 8px rgba(26, 21, 35, 0.08);
+  --shadow-brand: 0 4px 20px rgba(121, 87, 213, 0.3);
+
+  // --- Motion ---
+  --ease-out:        cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-in:         cubic-bezier(0.4, 0, 1, 1);
+  --duration-fast:   120ms;
+  --duration-normal: 200ms;
+  --duration-slow:   300ms;
+
+  // --- Spacing ---
+  --section-padding:    96px 0;
+  --section-padding-sm: 64px 0;
+  --container-max:      1200px;
+  --container-padding:  0 24px;
+
+  // --- Typography ---
+  --font-display: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-body:    'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --text-display: clamp(2.75rem, 6vw, 4.5rem);
+  --text-h1:      clamp(2rem, 4vw, 3rem);
+  --text-h2:      clamp(1.5rem, 3vw, 2rem);
+  --text-h3:      1.25rem;
+  --text-body-lg: 1.125rem;
+  --text-body:    1rem;
+  --text-sm:      0.875rem;
+  --text-xs:      0.75rem;
+}
+
+// Reduced motion guard
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

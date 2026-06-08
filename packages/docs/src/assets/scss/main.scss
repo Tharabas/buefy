@@ -4,6 +4,9 @@
 // Buefy
 @use "buefy/src/scss/buefy";
 
+// Design tokens (CSS custom properties)
+@use "_tokens";
+
 // Docs elements / components
 @use "_apiview";
 @use "_codeview";
