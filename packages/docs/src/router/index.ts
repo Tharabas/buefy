@@ -56,6 +56,8 @@ export function createDocsRouter(vueApp: App) {
                     route('documentation/css-variables', () => import('@/pages/installation/CssVariables.vue')),
                     route('documentation/theme-switching', () => import('@/pages/installation/ThemeSwitching.vue')),
                     route('documentation/typography', () => import('@/pages/installation/Typography.vue')),
+                    route('documentation/ai-skill', () => import('@/pages/installation/AiSkill.vue')),
+                    route('documentation/buefy-mcp', () => import('@/pages/installation/BuefyMcp.vue')),
                     route('documentation/constructor-options', () => import('@/pages/installation/ConstructorOptions.vue')),
                     route('documentation/layout', () => import('@/pages/Layout.vue')),
                     route('documentation/icon', () => import('@/pages/components/icon/Icon.vue')),

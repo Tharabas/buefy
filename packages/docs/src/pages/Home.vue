@@ -7,6 +7,7 @@
         <HomeCompat />
         <HomeInstall />
         <HomeComponentBrowser />
+        <HomeFaq />
         <HomeCommunity />
         <TheFooter />
     </section>
@@ -23,6 +24,7 @@ import HomeFeatures from '../components/home/HomeFeatures.vue'
 import HomeCompat from '../components/home/HomeCompat.vue'
 import HomeInstall from '../components/home/HomeInstall.vue'
 import HomeComponentBrowser from '../components/home/HomeComponentBrowser.vue'
+import HomeFaq from '../components/home/HomeFaq.vue'
 import HomeCommunity from '../components/home/HomeCommunity.vue'
 import Package from '../../../../package.json'
 
@@ -37,6 +39,7 @@ export default defineComponent({
         HomeCompat,
         HomeInstall,
         HomeComponentBrowser,
+        HomeFaq,
         HomeCommunity,
     },
     data() {

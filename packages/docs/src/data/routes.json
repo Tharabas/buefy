@@ -84,6 +84,32 @@
         ],
         "isNew": true
     },
+    "documentation/ai-skill": {
+        "title": "AI & Skills",
+        "subtitle": "Use SKILL.md to help AI coding agents generate accurate Buefy code",
+        "path": "/documentation/ai-skill",
+        "githubPath": "pages/installation/AiSkill.vue",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/ai-skill"
+        ],
+        "isNew": true
+    },
+    "documentation/buefy-mcp": {
+        "title": "Buefy MCP",
+        "subtitle": "A local MCP server that exposes Buefy component docs to AI coding agents",
+        "path": "/documentation/buefy-mcp",
+        "githubPath": "pages/installation/BuefyMcp.vue",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/buefy-mcp"
+        ],
+        "isNew": true
+    },
     "documentation/constructor-options": {
         "title": "Constructor options",
         "subtitle": "These are global default options, which are set on Buefy initialization",

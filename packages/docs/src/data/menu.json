@@ -19,6 +19,15 @@
             ]
         },
         {
+            "category": "AI",
+            "categoryIcon": "robot",
+            "categoryColor": "dark",
+            "pages": [
+                "documentation/ai-skill",
+                "documentation/buefy-mcp"
+            ]
+        },
+        {
             "category": "Layout",
             "categoryIcon": "view-dashboard",
             "categoryColor": "info",

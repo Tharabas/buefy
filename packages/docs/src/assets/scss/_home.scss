@@ -506,6 +506,76 @@
     }
 }
 
+// --- FAQ ---
+
+.faq-section {
+    background: var(--color-bg);
+    padding: var(--section-padding);
+}
+
+.faq-title {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    cursor: pointer;
+    background: var(--color-bg);
+    transition: background var(--duration-fast) var(--ease-out);
+    gap: 12px;
+
+    &:hover {
+        background: var(--color-bg-subtle);
+    }
+}
+
+.faq-question {
+    font-size: var(--text-body);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+}
+
+.faq-chevron {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+
+    :deep(.icon) {
+        color: var(--color-text-muted);
+    }
+}
+
+.faq-body {
+    padding: 0 20px 18px;
+
+    p {
+        font-size: var(--text-body);
+        color: var(--color-text-muted);
+        line-height: 1.7;
+        white-space: pre-line;
+        margin: 0;
+    }
+}
+
 // --- Community (Sponsors + Expo preview) ---
 
 .home-community-section {
