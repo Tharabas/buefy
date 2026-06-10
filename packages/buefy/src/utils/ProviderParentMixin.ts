@@ -75,18 +75,18 @@ export default <
             _registerItem(item: Child) {
                 this.childItems.push(item)
                 if (hasFlag(flags, sorted)) {
-                    const itemEl: Element | null = (item as any).$el ?? null
+                    type WithEl = { $el?: Element | null }
+                    const itemEl = (item as unknown as WithEl).$el ?? null
                     if (!isSSR && itemEl != null) {
                         // Sort by DOM position. DOCUMENT_POSITION_FOLLOWING (4)
                         // means the argument node comes after the reference node
                         // in document order.
+                        const following = Node.DOCUMENT_POSITION_FOLLOWING
                         this.childItems.sort((a: Child, b: Child) => {
-                            const aEl: Element | null = (a as any).$el ?? null
-                            const bEl: Element | null = (b as any).$el ?? null
+                            const aEl = (a as unknown as WithEl).$el ?? null
+                            const bEl = (b as unknown as WithEl).$el ?? null
                             if (aEl == null || bEl == null) return 0
-                            return aEl.compareDocumentPosition(bEl) & Node.DOCUMENT_POSITION_FOLLOWING
-                                ? -1
-                                : 1
+                            return aEl.compareDocumentPosition(bEl) & following ? -1 : 1
                         })
                     }
                     // Re-assign dynamicIndex to reflect sorted positions.
