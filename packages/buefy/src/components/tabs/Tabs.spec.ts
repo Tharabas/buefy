@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
+import { defineComponent } from 'vue'
 import { mount } from '@vue/test-utils'
 import type { VueWrapper } from '@vue/test-utils'
 import BTabs from '@components/tabs/Tabs.vue'
@@ -118,5 +119,28 @@ describe('BTabs', () => {
             }
         }).findComponent(BTabs)
         expect(wrapper.html()).toMatchSnapshot()
+    })
+
+    it('preserves DOM order when a tab is inserted via splice (v-for)', async () => {
+        const WrapperComp = defineComponent({
+            components: { BTabs, BTabItem },
+            data() {
+                return { tabs: ['tab0', 'tab2'] }
+            },
+            template: `
+                <BTabs>
+                    <BTabItem v-for="t in tabs" :key="t" :value="t" />
+                </BTabs>`
+        })
+
+        const root = mount(WrapperComp)
+        const tabsVm = root.findComponent(BTabs).vm
+
+        expect(tabsVm.items.map((i) => i.uniqueValue)).toEqual(['tab0', 'tab2'])
+
+        // Splice tab1 into position 1 — should appear between tab0 and tab2
+        await root.setData({ tabs: ['tab0', 'tab1', 'tab2'] })
+
+        expect(tabsVm.items.map((i) => i.uniqueValue)).toEqual(['tab0', 'tab1', 'tab2'])
     })
 })

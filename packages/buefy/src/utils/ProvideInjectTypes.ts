@@ -6,8 +6,8 @@ export interface InjectedChild {
     uniqueValue: string | number
     // `ProviderParent` will use `index` to sort the children.
     index: number
-    // `ProviderParent` will set `dynamicIndex` to tell the child the order
-    // of its registration.
+    // `ProviderParent` will set `dynamicIndex` to reflect the child's sorted
+    // position among siblings (DOM order in browser, insertion order on SSR).
     dynamicIndex?: number
 }
 

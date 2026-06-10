@@ -93,7 +93,7 @@ export default <
                 return this.value != null ? this.value : this.$.uid
             }
         } as ThisType<InjectedChildMixinInstance<FeatureFlags, Parent>>,
-        created() {
+        mounted() {
             if (!this.parent) {
                 if (flags !== undefined && !hasFlag(flags, optional)) {
                     throw new Error('You should wrap ' + this.$options.name + ' in a ' + parentItemName)

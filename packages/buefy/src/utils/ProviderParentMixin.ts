@@ -1,6 +1,7 @@
 import type { DefineComponent } from 'vue'
 
 import { hasFlag } from './helpers'
+import { isSSR } from './ssr'
 import type { InjectedChild } from './ProvideInjectTypes'
 
 const items = 1
@@ -72,15 +73,30 @@ export default <
         }
         mixin.methods = {
             _registerItem(item: Child) {
-                if (hasFlag(flags, sorted)) {
-                    // assigns a dynamic index.
-                    // dynamic indices will be messed up if any child is
-                    // unmounted.
-                    // use the new `order` prop to maintain the ordering.
-                    item.dynamicIndex = this.nextIndex
-                    ++this.nextIndex
-                }
                 this.childItems.push(item)
+                if (hasFlag(flags, sorted)) {
+                    const itemEl: Element | null = (item as any).$el ?? null
+                    if (!isSSR && itemEl != null) {
+                        // Sort by DOM position. DOCUMENT_POSITION_FOLLOWING (4)
+                        // means the argument node comes after the reference node
+                        // in document order.
+                        this.childItems.sort((a: Child, b: Child) => {
+                            const aEl: Element | null = (a as any).$el ?? null
+                            const bEl: Element | null = (b as any).$el ?? null
+                            if (aEl == null || bEl == null) return 0
+                            return aEl.compareDocumentPosition(bEl) & Node.DOCUMENT_POSITION_FOLLOWING
+                                ? -1
+                                : 1
+                        })
+                    }
+                    // Re-assign dynamicIndex to reflect sorted positions.
+                    // Items with an explicit `order` prop ignore dynamicIndex
+                    // via their `index` computed (order != null ? order : dynamicIndex).
+                    this.childItems.forEach((child: Child, i: number) => {
+                        child.dynamicIndex = i
+                    })
+                    this.nextIndex = this.childItems.length
+                }
             },
             _unregisterItem(item: Child) {
                 this.childItems = this.childItems

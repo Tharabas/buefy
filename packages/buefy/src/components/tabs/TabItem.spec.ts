@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { defineComponent } from 'vue'
+import { defineComponent, nextTick, reactive } from 'vue'
 import { mount } from '@vue/test-utils'
 import type { VueWrapper } from '@vue/test-utils'
 import BTabs from '@components/tabs/Tabs.vue'
@@ -59,7 +59,7 @@ describe('BTabItem', () => {
         await wrapperParent.setData({ show1: true })
 
         const firstItem2 = wrapperParent.findComponent({ ref: 'firstItem' })
-        expect(firstItem2.vm.index).toBe(3)
+        expect(firstItem2.vm.index).toBe(0)
     })
 
     it('transition correctly when activate is called', () => {
@@ -106,28 +106,33 @@ describe('BTabItem', () => {
     })
 
     it('doesn\'t render when parent has destroyOnHide', async () => {
+        // The mock parent must be reactive so that setting activeItem in
+        // _registerItem (now called in mounted()) invalidates the isActive
+        // computed and triggers a DOM re-render before we assert on html().
+        const mockParent = reactive({
+            _registerItem(item: TabbedChild) {
+                this.activeItem = item as TabbedChild | null
+            },
+            activeItem: null as TabbedChild | null,
+            destroyOnHide: true
+        })
+
         wrapper = mount(BTabItem, {
             props: {
                 value: 'tab1'
             },
             global: {
                 provide: {
-                    btab: {
-                        // since we cannot override the computed value,
-                        // `activeItem` needs to be identical to the item
-                        // to make the item active
-                        _registerItem(item: TabbedChild) {
-                            this.activeItem = item
-                        },
-                        activeItem: null,
-                        destroyOnHide: true
-                    }
+                    btab: mockParent
                 }
             }
         })
 
+        // isActive re-evaluates lazily after _registerItem runs in mounted()
         expect(wrapper.vm.isActive).toBeTruthy()
         expect(wrapper.vm.visible).toBeTruthy()
+        // Wait for the reactive re-render triggered by _registerItem
+        await nextTick()
         expect(wrapper.html()).not.toBe('')
 
         await wrapper.setProps({ visible: false })

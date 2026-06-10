@@ -1,5 +1,11 @@
 # Buefy Changelog
 
+## [3.0.9](https://github.com/buefy/buefy/compare/v3.0.8...v3.0.9)
+
+### Fixes
+
+- Fix BTabs, BSteps, and BCarousel tab ordering when items are inserted dynamically (e.g. via `v-for` splice after mount). Tabs now sort by DOM position instead of registration order.
+
 ## [3.0.8](https://github.com/buefy/buefy/compare/v3.0.7...v3.0.8)
 
 ### Fixes

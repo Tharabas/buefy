@@ -14,7 +14,7 @@ exports[`BTabs > render correctly 1`] = `
   </nav>
   <section class="tab-content">
     <transition-stub persisted="false" css="true">
-      <div class="tab-item" role="tabpanel" id="tab1-content" aria-labelledby="tab1-label" tabindex="0"></div>
+      <div class="tab-item" role="tabpanel" id="tab1-content" aria-labelledby="tab1-label" tabindex="0" style=""></div>
     </transition-stub>
     <transition-stub persisted="false" css="true">
       <div class="tab-item" role="tabpanel" id="tab2-content" aria-labelledby="tab2-label" tabindex="-1" style="display: none;"></div>
